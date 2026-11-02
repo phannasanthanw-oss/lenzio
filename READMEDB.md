@@ -13,13 +13,6 @@ Back-office (PHP)  ─┐
 Flutter ► FastAPI  ─┘
 ```
 
-## ที่มาของข้อมูล
-| ตาราง | ที่มา |
-| --- | --- |
-| `camera` (58), `lens` (60) | รวบรวมจากเว็บไซต์ผู้จำหน่ายและผู้ผลิต → `data/camera.csv`, `data/lens.csv` (ราคาเป็นค่าประมาณ) |
-| `camera_lens` (696) | สร้างจากกฎ ยี่ห้อและเมาท์ตรงกัน |
-| `users`, `recipe`, `review`, `favorite` | ข้อมูลจำลองเพื่อการทดสอบ (สร้างโดย `db/make_sql.py`, `random.seed(244)`) |
-
 ## โปรแกรมที่ต้องติดตั้ง
 - Docker Desktop (มี `docker compose`) — **จำเป็นสำหรับการติดตั้งแบบ Back-office**
 - เบราว์เซอร์ (Chrome / Safari)
