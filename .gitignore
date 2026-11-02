@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+/import_data.py
+/schema.sql
+/api/main_mysql.py
+/admin.py
+/supabase_backup.sql
+*.zip

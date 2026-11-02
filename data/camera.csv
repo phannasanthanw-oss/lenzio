@@ -1,0 +1,59 @@
+model_name,brand,sensor_format,megapixels,video_spec,iso_min,iso_max,mount,release_year,price_thb,image_url
+Sony A7 IV,Sony,Full frame,34.1,4K 60p / 10-bit,100,51200,E,2021,82990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/s/o/sony-a7-iii_1.png
+Sony A7 III,Sony,Full frame,24.2,4K 30p / 8-bit,100,51200,E,2018,59990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/s/o/sony-a7-iii_1.png
+Sony A7C II,Sony,Full frame,33,4K 60p / 10-bit,100,51200,E,2023,75990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1693305340_1784818.jpg
+Sony A7R V,Sony,Full frame,61,8K 24p / 4K 60p,100,32000,E,2022,139990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1666779545_1731389.jpg
+Sony A7S III,Sony,Full frame,12.1,4K 120p / 10-bit,80,102400,E,2020,121990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/5/1595930779_1577838_2.jpg
+Sony A9 III,Sony,Full frame,24.6,4K 120p (Global Shutter),250,25600,E,2024,219900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/s/o/sony_a9.jpg
+Sony A1 II,Sony,Full frame,50.1,8K 30p / 4K 120p,100,32000,E,2024,229900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/7/1732007726_1861705.jpg
+Sony A6700,Sony,APS-C,26,4K 120p / 10-bit,100,32000,E,2023,52990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1689157832_1776281.jpg
+Sony A6400,Sony,APS-C,24.2,4K 30p / 8-bit,100,32000,E,2019,28990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1689157832_1776281.jpg
+Sony ZV-E10 II,Sony,APS-C,26,4K 60p / 10-bit,100,32000,E,2024,35990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/7/1720608026_1838825.jpg
+Sony ZV-E1,Sony,Full frame,12.1,4K 120p / 10-bit,80,102400,E,2023,77990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/s/o/sony-zv-e10-mirrorless-camera-black_1.jpg
+Sony FX3,Sony,Full frame,12.1,4K 120p Cinema,80,102400,E,2021,134900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/7/1746547141_1894322.jpg
+Fujifilm X-T5,Fujifilm,APS-C,40,6.2K 30p / 4K 60p,125,12800,X,2022,69990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm-x-t5-silver-body_3_.jpg
+Fujifilm X-T4,Fujifilm,APS-C,26,4K 60p / 10-bit,160,12800,X,2020,59990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm-x-t5-silver-body_3_.jpg
+Fujifilm X-T3,Fujifilm,APS-C,26,4K 60p / 10-bit,160,12800,X,2018,49990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/x/-/x-h2-body_2_.jpg
+Fujifilm X-H2,Fujifilm,APS-C,40,8K 30p / 4K 60p,125,12800,X,2022,74990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/x/-/x-h2-body_2_.jpg
+Fujifilm X-H2S,Fujifilm,APS-C,26,6.2K 30p / 4K 120p,160,12800,X,2022,89990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/x/-/x-h2-body_2_.jpg
+Fujifilm X-S20,Fujifilm,APS-C,26,6.2K 30p / 4K 60p,160,12800,X,2023,45990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm-x-s20-body_3_.jpg
+Fujifilm X-S10,Fujifilm,APS-C,26,4K 30p,160,12800,X,2020,34990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm-x-s20-body_3_.jpg
+Fujifilm X-T50,Fujifilm,APS-C,40,6.2K 30p / 4K 60p,125,12800,X,2024,53990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm-x-t50-silver-body_1_.jpg
+Fujifilm X-T30 II,Fujifilm,APS-C,26,4K 30p,160,12800,X,2021,31990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm_x-t30_iii_black_1_1.png
+Fujifilm X-E4,Fujifilm,APS-C,26,4K 30p,160,12800,X,2021,29990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/7/1749707184_1900552.jpg
+Fujifilm X-Pro3,Fujifilm,APS-C,26,4K 30p,160,12800,X,2019,62990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/f/u/fujifilm-x100h-x100vi-silver-new_1_.jpg
+Fujifilm X-M5,Fujifilm,APS-C,26,6.2K 30p / 4K 60p,160,12800,X,2024,28990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/x/-/x-m5_front_xc15-45_silver.jpg
+Canon EOS R5,Canon,Full frame,45,8K 30p / 4K 120p,100,51200,RF,2020,134900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-r5-mark-ii.jpg
+Canon EOS R5 Mark II,Canon,Full frame,45,8K 60p RAW / 4K 120p,100,51200,RF,2024,147900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-r5-mark-ii.jpg
+Canon EOS R6,Canon,Full frame,20,4K 60p / 10-bit,100,102400,RF,2020,79900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-r6-mark-iii-5.jpg
+Canon EOS R6 Mark II,Canon,Full frame,24.2,4K 60p Uncropped,100,102400,RF,2022,89900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1667348713_1733214.jpg
+Canon EOS R7,Canon,APS-C,32.5,4K 60p / 10-bit,100,32000,RF,2022,49900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/i/m/img_4408.jpeg
+Canon EOS R8,Canon,Full frame,24.2,4K 60p Uncropped,100,102400,RF,2023,52900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-r8.png
+Canon EOS R10,Canon,APS-C,24.2,4K 60p (Crop),100,32000,RF,2022,31900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1653353121_1708097.jpg
+Canon EOS R50,Canon,APS-C,24.2,4K 30p Uncropped,100,32000,RF,2023,24990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/i/m/img_4408.jpeg
+Canon EOS R100,Canon,APS-C,24.1,4K 24p (Crop),100,12800,RF,2023,18900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/1/6/1653353121_1708097_1.jpg
+Canon EOS RP,Canon,Full frame,26.2,4K 24p (Crop),100,40000,RF,2019,35900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-rp-1.jpg
+Canon EOS R3,Canon,Full frame,24.1,6K 60p RAW / 4K 120p,100,102400,RF,2021,199900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-r5c.png
+Canon EOS R1,Canon,Full frame,24.2,6K 60p RAW / 4K 120p,100,102400,RF,2024,239900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/c/a/canon-eos-r1.png
+Nikon Z9,Nikon,Full frame,45.7,8K 60p RAW / 4K 120p,64,25600,Z,2021,179900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/z/9/z9-body.jpg
+Nikon Z8,Nikon,Full frame,45.7,8K 60p RAW / 4K 120p,64,25600,Z,2023,139900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z-8-4_1.jpg
+Nikon Z7 II,Nikon,Full frame,45.7,4K 60p,64,25600,Z,2020,98900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/z/5/z55-ii-16-50mm_1.jpg
+Nikon Z6 III,Nikon,Full frame,24.5,6K 60p RAW / 4K 120p,100,64000,Z,2024,88900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z6iii-2-kit_1.jpg
+Nikon Z6 II,Nikon,Full frame,24.5,4K 60p,100,51200,Z,2020,64900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z5-ii-body.jpg
+Nikon Z5,Nikon,Full frame,24.3,4K 30p (Crop),100,51200,Z,2020,42900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z5-ii-body.jpg
+Nikon Z f,Nikon,Full frame,24.5,4K 60p,100,64000,Z,2023,74900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z-f-silver.png
+Nikon Z30,Nikon,APS-C,20.9,4K 30p Uncropped,100,51200,Z,2022,24900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/z/-/z-30-16-50mm_2.jpg
+Nikon Z50,Nikon,APS-C,20.9,4K 30p,100,51200,Z,2019,28900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/z/5/z55-ii-16-50mm_1.jpg
+Nikon Z50 II,Nikon,APS-C,20.9,4K 60p,100,51200,Z,2024,32900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/z/5/z55-ii-16-50mm_1.jpg
+Nikon Z fc,Nikon,APS-C,20.9,4K 30p,100,51200,Z,2021,34900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z-f-silver.png
+Nikon Z5 II,Nikon,Full frame,24.5,4K 60p,100,64000,Z,2025,49900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/n/i/nikon-z5-ii-body.jpg
+Panasonic Lumix S5,Panasonic,Full frame,24.2,4K 60p / 10-bit,100,51200,L,2020,49900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic_lumix_s5ii_1.jpg
+Panasonic Lumix S5 II,Panasonic,Full frame,24.2,6K 30p / 4K 60p,100,51200,L,2023,65990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic_lumix_s5ii_1.jpg
+Panasonic Lumix S5 IIX,Panasonic,Full frame,24.2,6K 30p ProRes / RAW,100,51200,L,2023,75990,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic-lumix-dc-s5m2xga_1_1.jpg
+Panasonic Lumix S1,Panasonic,Full frame,24.2,4K 60p,100,51200,L,2019,69900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic-lumix-dc-s5_3_.jpg
+Panasonic Lumix S1R,Panasonic,Full frame,47.3,4K 60p,100,25600,L,2019,109900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic-lumix-dc-s1r_1__1.jpg
+Panasonic Lumix S1H,Panasonic,Full frame,24.2,6K 24p / 4K 60p Cinema,100,51200,L,2019,139900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/g/9/g97_mkit_front_k_1.jpg
+Panasonic Lumix S9,Panasonic,Full frame,24.2,6K 30p / Open Gate,100,51200,L,2024,55900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic-lumix-s9-body-jet-blac_2_2.png
+Panasonic Lumix S1 II,Panasonic,Full frame,24.2,6K 60p,100,51200,L,2025,89900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic-lumix-g100dk-kit-12-32mm-f3-5-5-6_1_.jpg
+Panasonic Lumix S1R II,Panasonic,Full frame,47.3,8K 30p,100,25600,L,2025,129900,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/p/a/panasonic-lumix-dc-s1r_1__1.jpg
+Panasonic Lumix BS1H,Panasonic,Full frame,24.2,6K 24p Box Camera,100,51200,L,2021,115000,https://www.bigcamera.co.th/media/catalog/product/cache/69a3da6bcd95df779892f4b24fa6a6f7/t/z/tz99-silver-01_2.jpg

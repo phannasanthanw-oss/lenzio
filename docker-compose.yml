@@ -1,0 +1,48 @@
+# Lenzio back-office (PHP + PostgreSQL + Adminer) - run:  docker compose up -d --build
+# Passwords are read from the .env file (copy .env.example to .env first); none are stored in this file.
+services:
+  # 1. Database (PostgreSQL) - schema + data are loaded automatically from db/lenzio.sql on first start
+  db:
+    image: postgres:16
+    container_name: lenzio_db
+    restart: always
+    environment:
+      POSTGRES_DB: lenzio
+      POSTGRES_USER: lenzio
+      POSTGRES_PASSWORD: ${LOCAL_DB_PASSWORD:?copy .env.example to .env and set LOCAL_DB_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db/lenzio.sql:/docker-entrypoint-initdb.d/lenzio.sql:ro
+
+  # 2. Database management tool (Adminer, works with PostgreSQL like phpMyAdmin does with MySQL)
+  adminer:
+    image: adminer
+    container_name: lenzio_adminer
+    restart: always
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+
+  # 3. Web server (PHP + Apache) = the back-office web application
+  web:
+    build: ./backoffice
+    container_name: lenzio_web
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USER: lenzio
+      DB_PASSWORD: ${LOCAL_DB_PASSWORD}
+      DB_NAME: lenzio
+    ports:
+      - "8090:80"
+    volumes:
+      - ./backoffice:/var/www/html
+    depends_on:
+      - db
+
+volumes:
+  db_data:

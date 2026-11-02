@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lenzio Back-office</title>
+<style>
+  :root {
+    --bg: #f5f7fb; --card: #ffffff; --ink: #111827; --muted: #6b7280; --line: #e5e8f0;
+    --primary: #2563eb; --primary-ink: #ffffff; --danger: #dc2626; --ok: #16a34a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 14px/1.5 system-ui, -apple-system, "Segoe UI", "Sukhumvit Set", "Thonburi", sans-serif; }
+  header { background: #1e3a8a; color: #fff; padding: 12px 24px; display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 18px; margin: 0; font-weight: 700; }
+  header .sub { opacity: .75; font-size: 13px; }
+  header a { color: #fff; margin-left: auto; font-size: 13px; opacity: .9; }
+  .layout { display: flex; gap: 20px; padding: 20px 24px; align-items: flex-start; }
+  nav { width: 200px; flex: none; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px; }
+  nav button { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 8px;
+               padding: 9px 12px; border: 0; background: none; border-radius: 8px; cursor: pointer;
+               font: inherit; color: var(--ink); text-align: left; }
+  nav button:hover { background: #eef2ff; }
+  nav button.on { background: var(--primary); color: var(--primary-ink); }
+  nav .n { font-size: 12px; opacity: .75; }
+  main { flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .toolbar h2 { margin: 0; font-size: 18px; }
+  .toolbar .tname { color: var(--muted); font-size: 13px; }
+  .toolbar .grow { flex: 1; }
+  input[type=search], .field input, .field select, .field textarea {
+    font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+  input[type=search] { width: 240px; }
+  button.btn { font: inherit; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line);
+               background: #fff; cursor: pointer; color: var(--ink); }
+  button.btn:hover { background: #f3f4f6; }
+  button.btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+  button.btn.primary:hover { background: #1d4ed8; }
+  button.btn.danger { color: var(--danger); }
+  button.btn.sm { padding: 4px 10px; font-size: 13px; }
+  button:disabled { opacity: .45; cursor: default; }
+  .tablewrap { overflow: auto; border: 1px solid var(--line); border-radius: 10px; max-height: 66vh; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { position: sticky; top: 0; background: #f9fafb; font-size: 12px; color: var(--muted); z-index: 1; }
+  td.txt { max-width: 280px; overflow: hidden; text-overflow: ellipsis; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.act { text-align: right; position: sticky; right: 0; background: var(--card); }
+  th.act { right: 0; }
+  tr:hover td { background: #f8faff; }
+  tr:hover td.act { background: #f8faff; }
+  td img { width: 44px; height: 32px; object-fit: contain; vertical-align: middle; margin-right: 8px;
+           background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+  .pk { color: var(--primary); font-size: 11px; }
+  .empty { padding: 40px; text-align: center; color: var(--muted); }
+  .pager { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-top: 12px; color: var(--muted); }
+  dialog { border: 0; border-radius: 14px; padding: 0; width: min(560px, 94vw); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+  dialog::backdrop { background: rgba(17,24,39,.45); }
+  dialog form { padding: 20px; }
+  dialog h3 { margin: 0 0 14px; font-size: 17px; }
+  .fields { display: grid; gap: 12px; max-height: 60vh; overflow: auto; padding: 2px; }
+  .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .field label .req { color: var(--danger); }
+  .field input, .field select, .field textarea { width: 100%; }
+  .field textarea { min-height: 70px; resize: vertical; }
+  .field input:disabled { background: #f3f4f6; color: var(--muted); }
+  .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+  .err { color: var(--danger); font-size: 13px; margin-top: 10px; white-space: pre-wrap; }
+  #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #111827; color: #fff;
+           padding: 10px 18px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity .2s; max-width: 90vw; }
+  #toast.show { opacity: 1; }
+  #toast.bad { background: var(--danger); }
+  @media (max-width: 760px) {
+    .layout { flex-direction: column; padding: 12px 16px; }
+    nav { width: 100%; display: flex; flex-wrap: wrap; }
+    nav button { width: auto; }
+    input[type=search] { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Lenzio Back-office</h1>
+  <span class="sub">จัดการข้อมูลในฐานข้อมูล (ดู / เพิ่ม / แก้ไข / ลบ)</span>
+  <a href="/docs">API docs →</a>
+</header>
+
+<div class="layout">
+  <nav id="tabs"></nav>
+  <main>
+    <div class="toolbar">
+      <h2 id="title">…</h2><span class="tname" id="tname"></span>
+      <span class="grow"></span>
+      <input type="search" id="search" placeholder="ค้นหาในตารางนี้…">
+      <button class="btn primary" id="add">+ เพิ่มข้อมูล</button>
+    </div>
+    <div class="tablewrap"><table id="grid"></table></div>
+    <div class="pager">
+      <span id="range"></span>
+      <button class="btn sm" id="prev">← ก่อนหน้า</button>
+      <button class="btn sm" id="next">ถัดไป →</button>
+    </div>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form id="form" method="dialog">
+    <h3 id="dtitle"></h3>
+    <div class="fields" id="fields"></div>
+    <div class="err" id="ferr"></div>
+    <div class="actions">
+      <button type="button" class="btn" id="cancel">ยกเลิก</button>
+      <button type="submit" class="btn primary" id="save">บันทึก</button>
+    </div>
+  </form>
+</dialog>
+<div id="toast"></div>
+
+<script>
+const LABEL = { camera: 'กล้อง', lens: 'เลนส์', users: 'ผู้ใช้', recipe: 'สูตรถ่ายภาพ',
+                review: 'รีวิว', camera_lens: 'กล้อง–เลนส์', favorite: 'รายการโปรด' };
+const CASCADE_TABLES = ['camera', 'lens', 'recipe', 'users'];
+const NUMERIC = ['integer', 'bigint', 'smallint', 'numeric', 'real', 'double precision'];
+const LONG_TEXT = ['description', 'comment'];
+const PAGE = 20;
+
+let schema = [], cur = null, page = 0, query = '', total = 0, rows = [], editing = null;
+
+const $ = (id) => document.getElementById(id);
+
+// tiny DOM helper: h('td', {class: 'x'}, child, ...)  (text is always inserted as text, never as HTML)
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === 'class') el.className = v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat()) if (kid != null) el.append(kid.nodeType ? kid : document.createTextNode(kid));
+  return el;
+}
+
+function toast(msg, bad) {
+  const t = $('toast');
+  t.textContent = msg; t.className = 'show' + (bad ? ' bad' : '');
+  clearTimeout(toast.t); toast.t = setTimeout(() => (t.className = ''), 3200);
+}
+
+async function api(path, opt = {}) {
+  const base = window.location.origin && window.location.origin.startsWith('http') ? '' : 'http://localhost:8000';
+  const r = await fetch(base + '/admin/api' + path, { headers: { 'Content-Type': 'application/json' }, ...opt });
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    const e = new Error(typeof body.detail === 'string' ? body.detail : JSON.stringify(body.detail || body));
+    e.status = r.status; throw e;
+  }
+  return body;
+}
+
+async function loadSchema() {
+  schema = (await api('/schema')).tables;
+  if (cur) cur = schema.find((t) => t.name === cur.name);
+  renderTabs();
+}
+
+function renderTabs() {
+  $('tabs').replaceChildren(...schema.map((t) =>
+    h('button', { class: cur && cur.name === t.name ? 'on' : '', onclick: () => openTable(t.name) },
+      h('span', {}, LABEL[t.name] || t.name), h('span', { class: 'n' }, t.count))));
+}
+
+async function openTable(name) {
+  cur = schema.find((t) => t.name === name);
+  page = 0; query = ''; $('search').value = '';
+  renderTabs();
+  await loadRows();
+}
+
+async function loadRows() {
+  $('title').textContent = LABEL[cur.name] || cur.name;
+  $('tname').textContent = 'ตาราง ' + cur.name;
+  try {
+    const res = await api(`/${cur.name}?limit=${PAGE}&offset=${page * PAGE}` + (query ? '&q=' + encodeURIComponent(query) : ''));
+    rows = res.rows; total = res.total;
+  } catch (e) { toast(e.message, true); rows = []; total = 0; }
+  renderGrid();
+}
+
+function pkOf(row) { return Object.fromEntries(cur.pk.map((c) => [c, row[c]])); }
+function editable() { return cur.columns.some((c) => !c.pk && !c.identity); }
+
+function cell(col, v) {
+  if (v === null || v === undefined) return h('td', { class: 'txt' }, h('span', { style: 'color:#9ca3af' }, 'NULL'));
+  if (typeof v === 'number') return h('td', { class: 'num' }, String(v));
+  const s = String(v);
+  if (col.name.endsWith('_url') && /^https?:/.test(s)) {
+    return h('td', { class: 'txt', title: s }, h('img', { src: s, loading: 'lazy', referrerpolicy: 'no-referrer', alt: '' }), s);
+  }
+  return h('td', { class: 'txt', title: s }, s.replace('T', ' '));
+}
+
+function renderGrid() {
+  const g = $('grid');
+  if (!rows.length) { g.replaceChildren(h('tbody', {}, h('tr', {}, h('td', { class: 'empty' }, 'ไม่พบข้อมูล')))); }
+  else {
+    const head = h('thead', {}, h('tr', {},
+      cur.columns.map((c) => h('th', {}, c.name, c.pk ? h('span', { class: 'pk' }, ' ● PK') : null)),
+      h('th', { class: 'act' }, 'จัดการ')));
+    const body = h('tbody', {}, rows.map((row) => h('tr', {},
+      cur.columns.map((c) => cell(c, row[c.name])),
+      h('td', { class: 'act' },
+        editable() ? h('button', { class: 'btn sm', onclick: () => openForm(row) }, 'แก้ไข') : null, ' ',
+        h('button', { class: 'btn sm danger', onclick: () => removeRow(row) }, 'ลบ')))));
+    g.replaceChildren(head, body);
+  }
+  const from = total ? page * PAGE + 1 : 0, to = Math.min(total, (page + 1) * PAGE);
+  $('range').textContent = `แสดง ${from}–${to} จาก ${total} แถว`;
+  $('prev').disabled = page === 0;
+  $('next').disabled = to >= total;
+}
+
+function inputFor(col, value) {
+  const common = { name: col.name, id: 'f_' + col.name };
+  let el;
+  if (LONG_TEXT.includes(col.name)) el = h('textarea', common);
+  else if (NUMERIC.includes(col.type)) el = h('input', { ...common, type: 'number', step: 'any' });
+  else if (col.type.startsWith('timestamp')) el = h('input', { ...common, type: 'datetime-local', step: '1' });
+  else el = h('input', { ...common, type: 'text' });
+  if (value !== undefined && value !== null) {
+    el.value = col.type.startsWith('timestamp') ? String(value).slice(0, 19) : value;
+  }
+  return el;
+}
+
+function openForm(row) {
+  editing = row || null;
+  $('dtitle').textContent = (row ? 'แก้ไข' : 'เพิ่มข้อมูล') + ' — ' + (LABEL[cur.name] || cur.name);
+  $('ferr').textContent = '';
+  const fields = [];
+  for (const c of cur.columns) {
+    if (!row && c.identity) continue;                    // the database numbers new rows itself
+    const el = inputFor(c, row ? row[c.name] : undefined);
+    if (row && (c.pk || c.identity)) el.disabled = true;  // keys are not edited
+    const required = !c.nullable && !c.has_default;
+    const hint = c.identity || (!row && c.has_default) ? ' (เว้นว่าง = ค่าอัตโนมัติ)' : '';
+    fields.push(h('div', { class: 'field' },
+      h('label', { for: el.id }, c.name, ' · ', c.type, required ? h('span', { class: 'req' }, ' *') : null, hint), el));
+  }
+  $('fields').replaceChildren(...fields);
+  $('dlg').showModal();
+}
+
+function readForm() {
+  const data = {};
+  for (const c of cur.columns) {
+    const el = $('f_' + c.name);
+    if (!el || el.disabled) continue;
+    let v = el.value;
+    if (v !== '' && NUMERIC.includes(c.type)) v = Number(v);
+    data[c.name] = v;
+  }
+  return data;
+}
+
+async function removeRow(row) {
+  const pk = pkOf(row);
+  if (!confirm('ลบแถวนี้ใช่ไหม?\n' + JSON.stringify(pk))) return;
+  const del = (q) => api(`/${cur.name}${q}`, { method: 'DELETE', body: JSON.stringify({ pk }) });
+  try {
+    try { await del(''); }
+    catch (e) {
+      if (e.status === 409 && CASCADE_TABLES.includes(cur.name) &&
+          confirm(e.message + '\n\nต้องการลบพร้อมข้อมูลที่เกี่ยวข้องทั้งหมดหรือไม่?')) await del('?cascade=true');
+      else throw e;
+    }
+    toast('ลบแล้ว');
+    await loadSchema(); await loadRows();
+  } catch (e) { toast(e.message, true); }
+}
+
+$('form').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  $('save').disabled = true; $('ferr').textContent = '';
+  try {
+    const data = readForm();
+    if (editing) await api('/' + cur.name, { method: 'PUT', body: JSON.stringify({ pk: pkOf(editing), data }) });
+    else await api('/' + cur.name, { method: 'POST', body: JSON.stringify({ data }) });
+    $('dlg').close();
+    toast(editing ? 'แก้ไขแล้ว' : 'เพิ่มแล้ว');
+    await loadSchema(); await loadRows();
+  } catch (e) { $('ferr').textContent = e.message; }
+  finally { $('save').disabled = false; }
+});
+
+$('cancel').onclick = () => $('dlg').close();
+$('add').onclick = () => openForm(null);
+$('prev').onclick = () => { page--; loadRows(); };
+$('next').onclick = () => { page++; loadRows(); };
+let timer;
+$('search').addEventListener('input', (e) => {
+  clearTimeout(timer);
+  timer = setTimeout(() => { query = e.target.value.trim(); page = 0; loadRows(); }, 300);
+});
+
+(async () => {
+  try { await loadSchema(); await openTable(schema[0].name); }
+  catch (e) { toast('เชื่อมต่อ API ไม่ได้: ' + e.message, true); }
+})();
+</script>
+</body>
+</html>
